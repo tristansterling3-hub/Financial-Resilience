@@ -121,7 +121,7 @@ df["Resilience_Score"] = (
 # ---------------------------------------------
 # HEADER
 # ---------------------------------------------
-st.title("🌎 North Carolina County Resilience Dashboard")
+st.title("🌎 EquiScope")
 st.markdown("Live Census income data + dynamic scoring model + high-res map.")
 
 
