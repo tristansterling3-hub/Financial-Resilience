@@ -7,7 +7,7 @@ import plotly.express as px
 # ---------------------------------------------
 # PAGE CONFIG
 # ---------------------------------------------
-st.set_page_config(page_title="NC County Resilience Dashboard", layout="wide")
+st.set_page_config(page_title="EquiScope", layout="wide")
 
 
 # ---------------------------------------------
