@@ -175,34 +175,34 @@ st.plotly_chart(fig_bar, use_container_width=True)
 # ---------------------------------------------
 # NC RESILIENCE CHOROPLETH (HIGH RES)
 # ---------------------------------------------
-st.subheader("🗺️ High-Resolution NC County Map")
+st.subheader("🗺️ North Carolina County Resilience Map")
 
-fig_map = px.choropleth_map(
+fig_map = px.choropleth_mapbox(
     df,
     geojson=geojson,
     locations="County",
     featureidkey="properties.County",
     color="Resilience_Score",
-    color_continuous_scale="Viridis",
+    color_continuous_scale="YlGnBu",
     hover_name="County",
     hover_data={
         "Median_Income": True,
         "Income_Norm": ":.3f",
         "Resilience_Score": ":.3f"
     },
-    zoom=6.2,
     center={"lat": 35.5, "lon": -79.4},
-    opacity=0.8,
-    title="Resilience Score by County"
+    zoom=6.2,
+    opacity=0.88
 )
 
 fig_map.update_traces(
-    marker_line_width=0.8,
+    marker_line_width=1.0,
     marker_line_color="white"
 )
 
 fig_map.update_layout(
-    margin={"r": 0, "t": 40, "l": 0, "b": 0}
+    mapbox_style="carto-positron",
+    margin={"r": 0, "t": 0, "l": 0, "b": 0}
 )
 
 st.plotly_chart(fig_map, use_container_width=True)
