@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #13232f;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #0e2a3b;
+  color: #eff7fb;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar h2,
+.sidebar h3 {
+  margin: 0 0 10px;
+}
+
+.sidebar label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.sidebar input[type="range"] {
+  width: 100%;
+}
+
+.sidebar textarea {
+  width: 100%;
+  min-height: 90px;
+  border-radius: 8px;
+  border: 0;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.sidebar button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sidebar #ask-btn {
+  background: #3bb273;
+  color: white;
+  width: 100%;
+}
+
+.sidebar .download {
+  margin-top: 14px;
+  width: 100%;
+  background: #2f90b9;
+  color: white;
+}
+
+.sidebar .ai-response {
+  min-height: 50px;
+  font-size: 14px;
+}
+
+.normalized p {
+  margin: 6px 0;
+}
+
+.content {
+  padding: 24px;
+}
+
+.select-row {
+  margin: 16px 0;
+}
+
+#county-select {
+  margin-left: 10px;
+  padding: 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h4 {
+  margin: 0 0 8px;
+}
+
+.card p {
+  margin: 0;
+  font-weight: 600;
+}
+
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.chart {
+  width: 100%;
+  min-height: 480px;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #e9eef2;
+  font-size: 14px;
+}
+
+.rankings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .cards,
+  .rankings {
+    grid-template-columns: 1fr;
+  }
+}
