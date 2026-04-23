@@ -87,9 +87,10 @@ function renderSelected(rows) {
     insight = "Low income levels";
   }
 
-  document.getElementById("selected-score").textContent = `${selected.County}: ${selected.Resilience_Score}`;
-  document.getElementById("selected-rank").textContent = `#${rank} of ${rows.length}`;
-  document.getElementById("selected-insight").textContent = insight;
+  document.getElementById("selected-score-label").textContent = `${selected.County} Resilience Score`;
+  document.getElementById("selected-score").textContent = `${selected.Resilience_Score}`;
+  document.getElementById("selected-rank").textContent = `Rank: #${rank} out of ${rows.length} counties`;
+  document.getElementById("selected-insight").textContent = `Insight: ${insight}`;
 }
 
 function renderBar(rows) {
@@ -110,7 +111,7 @@ function renderBar(rows) {
       plot_bgcolor: "rgba(0,0,0,0)",
       font: { color: "#d9e7fb" },
       xaxis: { tickangle: -60, gridcolor: "rgba(255,255,255,0.08)" },
-      yaxis: { range: [0, 1] },
+      yaxis: { range: [0, 1], gridcolor: "rgba(255,255,255,0.14)" },
     },
     { responsive: true }
   );
@@ -134,7 +135,7 @@ function renderMap(rows) {
     ],
     {
       mapbox: {
-        style: "carto-darkmatter",
+        style: "carto-positron",
         center: { lat: 35.5, lon: -79.4 },
         zoom: 6.1,
       },

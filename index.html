@@ -10,7 +10,7 @@
   <body>
     <div class="layout">
       <aside class="sidebar">
-        <h2>Adjust Score Weights</h2>
+        <h2>⚖️ Adjust Score Weights</h2>
         <label>Income Weight <span id="income-weight-label">1.00</span></label>
         <input id="w-income" type="range" min="0" max="1" step="0.05" value="1" />
 
@@ -29,7 +29,7 @@
 
         <hr />
 
-        <h3>AI Assistant</h3>
+        <h3>🧠 AI Assistant</h3>
         <textarea id="question" placeholder="Ask about risks or county issues"></textarea>
         <button id="ask-btn">Ask</button>
         <p id="ai-response" class="ai-response"></p>
@@ -38,7 +38,7 @@
       </aside>
 
       <main class="content">
-        <h1>EquiScope</h1>
+        <h1>🌎 EquiScope</h1>
         <p>Live Census income data + dynamic scoring model + high-res map.</p>
 
         <div class="select-row">
@@ -46,33 +46,25 @@
           <select id="county-select"></select>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <h4>Resilience Score</h4>
-            <p id="selected-score">-</p>
-          </div>
-          <div class="card">
-            <h4>Rank</h4>
-            <p id="selected-rank">-</p>
-          </div>
-          <div class="card">
-            <h4>Insight</h4>
-            <p id="selected-insight">-</p>
-          </div>
+        <div class="metric-block">
+          <h4 id="selected-score-label">County Resilience Score</h4>
+          <p id="selected-score">-</p>
+          <p id="selected-rank">-</p>
+          <p id="selected-insight">-</p>
         </div>
 
         <section>
-          <h2>County Comparison</h2>
+          <h2>📊 County Comparison</h2>
           <div id="bar-chart" class="chart"></div>
         </section>
 
         <section>
-          <h2>North Carolina County Resilience Map</h2>
+          <h2>🗺️ North Carolina County Resilience Map</h2>
           <div id="map-chart" class="chart"></div>
         </section>
 
         <section>
-          <h2>Resilience Score Breakdown</h2>
+          <h2>📋 Resilience Score Breakdown</h2>
           <div class="table-wrap">
             <table id="data-table">
               <thead>
@@ -90,17 +82,17 @@
 
         <section class="rankings">
           <div>
-            <h2>Top 5 Counties</h2>
+            <h2>🏆 Top 5 Counties</h2>
             <ol id="top5"></ol>
           </div>
           <div>
-            <h2>Bottom 5 Counties</h2>
+            <h2>🏆 Bottom 5 Counties</h2>
             <ol id="bottom5"></ol>
           </div>
         </section>
 
         <section class="methodology">
-          <h2>Methodology</h2>
+          <h2>📘 Methodology</h2>
           <p>Resilience Score = Weighted Blend of:</p>
           <ul>
             <li>Median Income (normalized)</li>
