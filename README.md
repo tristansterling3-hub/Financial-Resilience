@@ -1,5 +1,5 @@
 # Financial-Resilience
-![Dashboard Preview](Screenshot_2025-11-16_dashboard.png)
+![Dashboard Preview](Screenshot 2026-04-23 170903.png)
 
 North Carolina County Resilience Dashboard.
 
