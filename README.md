@@ -3,6 +3,8 @@
 
 North Carolina County Resilience Dashboard.
 
+Live site: https://tristansterling3-hub.github.io/Financial-Resilience-Dashboard/
+
 A real-time dashboard using live U.S. Census income data and a high-resolution North Carolina county map.
 
 ## Overview
@@ -103,7 +105,7 @@ Deploy with GitHub Pages:
 4. Select `main` and `/ (root)`
 5. Save and wait for publish
 
-Default URL format:
+Live URL:
 
 `https://tristansterling3-hub.github.io/Financial-Resilience-Dashboard/`
 
