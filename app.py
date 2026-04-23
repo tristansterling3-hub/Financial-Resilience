@@ -177,16 +177,35 @@ st.plotly_chart(fig_bar, use_container_width=True)
 # ---------------------------------------------
 st.subheader("🗺️ High-Resolution NC County Map")
 
-fig_map = px.choropleth(
+fig_map = px.choropleth_map(
     df,
     geojson=geojson,
     locations="County",
-    featureidkey="properties.County",   # ← IMPORTANT FIX
+    featureidkey="properties.County",
     color="Resilience_Score",
     color_continuous_scale="Viridis",
-    labels={"Resilience_Score": "Resilience Score"},
-    title="Resilience Score by County",
+    hover_name="County",
+    hover_data={
+        "Median_Income": True,
+        "Income_Norm": ":.3f",
+        "Resilience_Score": ":.3f"
+    },
+    zoom=6.2,
+    center={"lat": 35.5, "lon": -79.4},
+    opacity=0.8,
+    title="Resilience Score by County"
 )
+
+fig_map.update_traces(
+    marker_line_width=0.8,
+    marker_line_color="white"
+)
+
+fig_map.update_layout(
+    margin={"r": 0, "t": 40, "l": 0, "b": 0}
+)
+
+st.plotly_chart(fig_map, use_container_width=True)
 
 # ⭐ Fix blank map: hide global map + fit to NC boundaries
 fig_map.update_geos(
