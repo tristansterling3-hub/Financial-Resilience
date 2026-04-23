@@ -1,7 +1,7 @@
 let baseRows = [];
 let geojson = null;
 const CENSUS_API_KEY = "c3b895c40dc66379b8b94a7716a0832ebea452d7";
-const GEOJSON_URL = "./data/North_Carolina_State_and_County_Boundary_Polygons.geojson";
+const GEOJSON_URL = "./North_Carolina_State_and_County_Boundary_Polygons.geojson";
 
 const countySelect = document.getElementById("county-select");
 const wIncome = document.getElementById("w-income");
