@@ -207,20 +207,6 @@ fig_map.update_layout(
 
 st.plotly_chart(fig_map, use_container_width=True)
 
-# ⭐ Fix blank map: hide global map + fit to NC boundaries
-fig_map.update_geos(
-    fitbounds="locations",
-    visible=False
-)
-
-# ⭐ Clean layout + smooth transitions
-fig_map.update_layout(
-    margin={"r": 0, "t": 30, "l": 0, "b": 0},
-    transition_duration=600
-)
-
-st.plotly_chart(fig_map, use_container_width=True)
-
 # ---------------------------------------------
 # DATA TABLE
 # ---------------------------------------------
