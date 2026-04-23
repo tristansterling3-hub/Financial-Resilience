@@ -61,12 +61,9 @@ function computeRows() {
 
 function updateWeightLabels() {
   const w = normalizedWeights();
-  document.getElementById("income-weight-label").textContent =
-    `${Number(wIncome.value).toFixed(2)} (${Math.round(Number(wIncome.value) * 100)}%)`;
-  document.getElementById("unemp-weight-label").textContent =
-    `${Number(wUnemp.value).toFixed(2)} (${Math.round(Number(wUnemp.value) * 100)}%)`;
-  document.getElementById("cost-weight-label").textContent =
-    `${Number(wCost.value).toFixed(2)} (${Math.round(Number(wCost.value) * 100)}%)`;
+  document.getElementById("income-weight-label").textContent = Number(wIncome.value).toFixed(2);
+  document.getElementById("unemp-weight-label").textContent = Number(wUnemp.value).toFixed(2);
+  document.getElementById("cost-weight-label").textContent = Number(wCost.value).toFixed(2);
   document.getElementById("norm-income").textContent = `Income: ${w.income.toFixed(2)}`;
   document.getElementById("norm-unemp").textContent = `Unemployment: ${w.unemp.toFixed(2)}`;
   document.getElementById("norm-cost").textContent = `Cost: ${w.cost.toFixed(2)}`;
