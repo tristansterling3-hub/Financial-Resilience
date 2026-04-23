@@ -47,7 +47,43 @@ body {
 
 .sidebar input[type="range"] {
   width: 100%;
-  accent-color: #ff5a7a;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, #ff5a7a 0%, #ff9f6a 100%) 0 / var(--p, 0%) 100% no-repeat,
+    rgba(230, 242, 255, 0.2);
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.sidebar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f3f9ff;
+  border: 2px solid #ff5a7a;
+  box-shadow: 0 0 0 3px rgba(255, 90, 122, 0.18);
+  cursor: pointer;
+}
+
+.sidebar input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f3f9ff;
+  border: 2px solid #ff5a7a;
+  box-shadow: 0 0 0 3px rgba(255, 90, 122, 0.18);
+  cursor: pointer;
+}
+
+.sidebar input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(230, 242, 255, 0.2);
 }
 
 .sidebar textarea {

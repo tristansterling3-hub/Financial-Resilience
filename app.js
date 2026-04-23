@@ -8,6 +8,14 @@ const wIncome = document.getElementById("w-income");
 const wUnemp = document.getElementById("w-unemp");
 const wCost = document.getElementById("w-cost");
 
+function updateSliderVisual(sliderEl) {
+  const min = Number(sliderEl.min || 0);
+  const max = Number(sliderEl.max || 1);
+  const val = Number(sliderEl.value || 0);
+  const pct = ((val - min) / (max - min || 1)) * 100;
+  sliderEl.style.setProperty("--p", `${pct}%`);
+}
+
 function parseFloatSafe(value) {
   const n = Number(value);
   return Number.isFinite(n) ? n : 0;
@@ -53,12 +61,18 @@ function computeRows() {
 
 function updateWeightLabels() {
   const w = normalizedWeights();
-  document.getElementById("income-weight-label").textContent = Number(wIncome.value).toFixed(2);
-  document.getElementById("unemp-weight-label").textContent = Number(wUnemp.value).toFixed(2);
-  document.getElementById("cost-weight-label").textContent = Number(wCost.value).toFixed(2);
+  document.getElementById("income-weight-label").textContent =
+    `${Number(wIncome.value).toFixed(2)} (${Math.round(Number(wIncome.value) * 100)}%)`;
+  document.getElementById("unemp-weight-label").textContent =
+    `${Number(wUnemp.value).toFixed(2)} (${Math.round(Number(wUnemp.value) * 100)}%)`;
+  document.getElementById("cost-weight-label").textContent =
+    `${Number(wCost.value).toFixed(2)} (${Math.round(Number(wCost.value) * 100)}%)`;
   document.getElementById("norm-income").textContent = `Income: ${w.income.toFixed(2)}`;
   document.getElementById("norm-unemp").textContent = `Unemployment: ${w.unemp.toFixed(2)}`;
   document.getElementById("norm-cost").textContent = `Cost: ${w.cost.toFixed(2)}`;
+  updateSliderVisual(wIncome);
+  updateSliderVisual(wUnemp);
+  updateSliderVisual(wCost);
 }
 
 function populateCountySelect(rows) {
