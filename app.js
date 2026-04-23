@@ -100,13 +100,16 @@ function renderBar(rows) {
         type: "bar",
         x: rows.map((r) => r.County),
         y: rows.map((r) => r.Resilience_Score),
-        marker: { color: "#247ba0" },
+        marker: { color: "#76b8e8" },
       },
     ],
     {
       title: "Financial Resilience by County",
       margin: { t: 45, l: 40, r: 10, b: 110 },
-      xaxis: { tickangle: -60 },
+      paper_bgcolor: "rgba(0,0,0,0)",
+      plot_bgcolor: "rgba(0,0,0,0)",
+      font: { color: "#d9e7fb" },
+      xaxis: { tickangle: -60, gridcolor: "rgba(255,255,255,0.08)" },
       yaxis: { range: [0, 1] },
     },
     { responsive: true }
@@ -118,7 +121,7 @@ function renderMap(rows) {
     "map-chart",
     [
       {
-        type: "choropleth",
+        type: "choroplethmapbox",
         geojson: geojson,
         locations: rows.map((r) => r.County),
         z: rows.map((r) => r.Resilience_Score),
@@ -126,15 +129,18 @@ function renderMap(rows) {
         featureidkey: "properties.County",
         colorscale: "YlGnBu",
         marker: { line: { color: "white", width: 1 } },
+        hovertemplate: "%{text}<br>Score: %{z:.3f}<extra></extra>",
       },
     ],
     {
-      geo: {
-        fitbounds: "locations",
-        visible: false,
-        projection: { type: "mercator" },
+      mapbox: {
+        style: "carto-darkmatter",
+        center: { lat: 35.5, lon: -79.4 },
+        zoom: 6.1,
       },
       margin: { t: 0, l: 0, r: 0, b: 0 },
+      paper_bgcolor: "rgba(0,0,0,0)",
+      font: { color: "#d9e7fb" },
     },
     { responsive: true }
   );
